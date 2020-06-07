@@ -60,5 +60,5 @@ Authorization     Bearer token
 Add more strategies to passport or extend the `token` strategy to fine-grain authorization.
 
 # Inspired by
-https://github.com/phcollignon/rest-api-node-jwt-typescript
-https://github.com/robert-dordai/mern-starter
+- https://github.com/phcollignon/rest-api-node-jwt-typescript
+- https://github.com/robert-dordai/mern-starter
