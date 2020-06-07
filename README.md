@@ -1,7 +1,12 @@
 # Node Rest API
-- Written in **Typescript**.  
-- Uses **Mongoose ORM**.
-- Authentification and Authorization with **JWT (Passport)**.
+- **Typescript**.  
+- **Mongoose ORM**.
+- **JWT (Passport)**.
+
+- Data access service.
+- Basic error handlers.
+- Interfaces and types.
+- Some simple authorization strategies illustrated & ready to use.
 
 # Installation
 - Clone the repository
@@ -54,17 +59,6 @@ Authorization     Bearer token
 
 Add more strategies to passport or extend the `token` strategy to fine-grain authorization.
 
-# Credits
-philippe@collignon.email
-Routing based on FazTech rest api
-> More information about the architecture of the API can be found in this Medium story :
-> https://medium.com/@phcollignon/node-rest-api-jwt-in-typescript-e6a8ae5cd8f8
-
-Updates by: adrian.petrisor@saltandpepper.co
-```
-- Fixed login.
-- GET/PUT my user, to ilustrate a simple authorization strategy.
-- Moved login, register to auth controller.
-- Call passport middleware in auth controller. Keep strategies in services/passport.
-- Error handlers and some refactoring.
-```
+# Inspired by
+https://github.com/phcollignon/rest-api-node-jwt-typescript
+https://github.com/robert-dordai/mern-starter
