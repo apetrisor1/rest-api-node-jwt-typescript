@@ -1,4 +1,5 @@
 import { Model, Document } from 'mongoose'
+import { tView, tViewKeys } from '../types'
 
 export class View {
   model: Model<Document>
@@ -7,13 +8,8 @@ export class View {
   }
 
   getView = (document: Document) => {
-    type tView = {
-      [key: string]: any
-    }
     const view: tView = {}
-
-    type tMapOptions = [string]
-    const keysToShow: tMapOptions = this.model.schema.methods.keysToShow()
+    const keysToShow: tViewKeys = this.model.schema.methods.keysToShow()
 
     keysToShow.forEach((key) => {
       view[key] = document.get(key)

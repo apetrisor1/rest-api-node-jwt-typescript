@@ -1,12 +1,13 @@
 import { Request } from 'express'
 import { Document } from 'mongoose'
-import { IUserLoose, User } from '.'
+import { User } from '.'
+import { IUserRequestBody } from '../interfaces'
 import { DataAccessService } from '../services/dataAccess'
 
 export class UserService {
   data: DataAccessService = new DataAccessService(User)
 
-  public addUser = async (body: IUserLoose): Promise<Document> => {
+  public addUser = async (body: IUserRequestBody): Promise<Document> => {
     return this.data.addDocument(body)
   }
 
@@ -14,7 +15,7 @@ export class UserService {
     const { user } = req
     if (!req.body.name) return user
 
-    const payload: IUserLoose = { name : req.body.name }
+    const payload: IUserRequestBody = { name : req.body.name }
     return this.data.updateAndReturnDocument(user, payload)
   }
 }

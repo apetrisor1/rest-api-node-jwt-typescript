@@ -1,6 +1,6 @@
-export interface IIncomingBody {
+export interface IPayload {
   _id?: string
 }
-export interface IOldBody {
+export interface IDocument {
   _id: string
 }

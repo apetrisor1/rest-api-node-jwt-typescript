@@ -1,7 +1,7 @@
-import { Document, Schema, Model, model, Error } from 'mongoose'
 import bcrypt from 'bcrypt-nodejs'
+import { Schema, Model, model, Error } from 'mongoose'
+import { IUser } from '../interfaces'
 import { USER_ROLES } from '../CONSTANTS'
-import { IIncomingBody } from '../services/dataAccess'
 
 /*
   master: Full access.
@@ -9,21 +9,6 @@ import { IIncomingBody } from '../services/dataAccess'
   client: Basic access.
 */
 const roles = Array.from(Object.values(USER_ROLES))
-
-export interface IUser extends Document {
-  view(): any
-  email: string
-  password: string
-  name?: string
-  role?: string
-}
-
-export interface IUserLoose extends IIncomingBody {
-  email?: string
-  password?: string
-  role?: string
-  name?: string
-}
 
 export const userSchema: Schema = new Schema({
   email: {
